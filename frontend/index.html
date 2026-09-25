@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Climate Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <span>Climate<span class="logo-highlight">Intelligence</span></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#prediction">Prediction</a>
+            <a href="#insights">Insights</a>
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                <i class="fa-solid fa-circle-check"></i>
+                AI-Powered Climate Analysis
+            </div>
+
+            <h1>
+                Understand Your
+                <span>Climate Risk</span>
+            </h1>
+
+            <p>
+                Enter climate and weather conditions to get an
+                AI-powered AQI category prediction using our
+                machine learning model.
+            </p>
+
+            <a href="#prediction" class="primary-btn">
+                <i class="fa-solid fa-chart-line"></i>
+                Start Prediction
+            </a>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="climate-circle">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+
+            <div class="floating-card card-one">
+                <i class="fa-solid fa-temperature-half"></i>
+                <div>
+                    <small>Temperature</small>
+                    <strong id="heroTemp">-- °C</strong>
+                </div>
+            </div>
+
+            <div class="floating-card card-two">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                    <small>Humidity</small>
+                    <strong id="heroHumidity">-- %</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PREDICTION ================= -->
+    <section class="prediction-section" id="prediction">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                AI Prediction
+            </span>
+
+            <h2>Climate Risk Prediction</h2>
+
+            <p>
+                Enter the current climate conditions below.
+                Our machine learning model will analyze the data.
+            </p>
+
+        </div>
+
+
+        <div class="prediction-layout">
+
+            <!-- INPUT FORM -->
+            <div class="form-card">
+
+                <form id="predictionForm">
+
+                    <!-- LOCATION -->
+                    <div class="form-section">
+
+                        <h3>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Location
+                        </h3>
+
+                        <div class="input-grid">
+
+                            <div class="input-group">
+                                <label for="city">City</label>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    placeholder="e.g. Ambala"
+                                    required
+                                >
+                            </div>
+
+                            <div class="input-group">
+                                <label for="state">State</label>
+
+                                <input
+                                    type="text"
+                                    id="state"
+                                    placeholder="e.g. Haryana"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- WEATHER -->
+                    <div class="form-section">
+
+                        <h3>
+                            <i class="fa-solid fa-cloud-sun"></i>
+                            Weather Conditions
+                        </h3>
+
+                        <div class="input-grid">
+
+                            <div class="input-group">
+                                <label for="tempMax">
+                                    Maximum Temperature (°C)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="tempMax"
+                                    step="0.1"
+                                    placeholder="35"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="input-group">
+                                <label for="tempMin">
+                                    Minimum Temperature (°C)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="tempMin"
+                                    step="0.1"
+                                    placeholder="25"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="input-group">
+                                <label for="tempAvg">
+                                    Average Temperature (°C)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="tempAvg"
+                                    step="0.1"
+                                    placeholder="30"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="input-group">
+                                <label for="humidity">
+                                    Humidity (%)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="humidity"
+                                    min="0"
+                                    max="100"
+                                    step="0.1"
+                                    placeholder="60"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="input-group">
+                                <label for="rainfall">
+                                    Rainfall (mm)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="rainfall"
+                                    min="0"
+                                    step="0.1"
+                                    placeholder="2"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="input-group">
+                                <label for="windSpeed">
+                                    Wind Speed (km/h)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="windSpeed"
+                                    min="0"
+                                    step="0.1"
+                                    placeholder="15"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="input-group">
+                                <label for="pressure">
+                                    Pressure (hPa)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="pressure"
+                                    step="0.1"
+                                    placeholder="1008"
+                                    required
+                                >
+                            </div>
+
+
+                            <div class="input-group">
+                                <label for="cloudCover">
+                                    Cloud Cover (%)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="cloudCover"
+                                    min="0"
+                                    max="100"
+                                    step="0.1"
+                                    placeholder="40"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATE -->
+                    <div class="form-section">
+
+                        <h3>
+                            <i class="fa-regular fa-calendar"></i>
+                            Date
+                        </h3>
+
+                        <div class="input-group">
+
+                            <label for="date">
+                                Observation Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="date"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DERIVED FEATURES -->
+                    <div class="derived-box">
+
+                        <div class="derived-title">
+                            <i class="fa-solid fa-gears"></i>
+                            Automatically Calculated
+                        </div>
+
+                        <div class="derived-grid">
+
+                            <div>
+                                <span>Temperature Range</span>
+                                <strong id="rangePreview">-- °C</strong>
+                            </div>
+
+                            <div>
+                                <span>Humidity Temperature Index</span>
+                                <strong id="htiPreview">--</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ERROR -->
+                    <div id="errorMessage" class="error-message hidden">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span></span>
+                    </div>
+
+
+                    <!-- BUTTON -->
+                    <button
+                        type="submit"
+                        id="predictBtn"
+                        class="predict-btn"
+                    >
+                        <span id="buttonText">
+                            <i class="fa-solid fa-brain"></i>
+                            Predict Climate Risk
+                        </span>
+
+                        <span id="loadingText" class="hidden">
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                            Analyzing Climate Data...
+                        </span>
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- RESULT -->
+            <div class="result-card">
+
+                <div class="result-header">
+
+                    <span class="result-label">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        Prediction Result
+                    </span>
+
+                    <span class="status-dot"></span>
+
+                </div>
+
+
+                <div id="resultPlaceholder" class="result-placeholder">
+
+                    <div class="result-icon">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+
+                    <h3>Awaiting Prediction</h3>
+
+                    <p>
+                        Enter the climate information and click
+                        <strong>Predict Climate Risk</strong>
+                        to see the result.
+                    </p>
+
+                </div>
+
+
+                <div id="predictionResult" class="prediction-result hidden">
+
+                    <span class="result-small-title">
+                        Climate Risk
+                    </span>
+
+                    <div
+                        id="predictionClass"
+                        class="prediction-class"
+                    >
+                        --
+                    </div>
+
+                    <div
+                        id="predictionDescription"
+                        class="prediction-description"
+                    >
+                        --
+                    </div>
+
+
+                    <div class="risk-indicator">
+
+                        <div class="risk-bar">
+
+                            <span data-risk="Good">
+                                Good
+                            </span>
+
+                            <span data-risk="Satisfactory">
+                                Satisfactory
+                            </span>
+
+                            <span data-risk="Moderate">
+                                Moderate
+                            </span>
+
+                            <span data-risk="Poor">
+                                Poor
+                            </span>
+
+                            <span data-risk="Very Poor">
+                                Very Poor
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WEATHER SUMMARY -->
+
+                <div class="weather-summary">
+
+                    <h3>Climate Summary</h3>
+
+                    <div class="summary-grid">
+
+                        <div class="summary-item">
+                            <i class="fa-solid fa-temperature-half"></i>
+                            <div>
+                                <span>Temperature</span>
+                                <strong id="summaryTemp">--</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-item">
+                            <i class="fa-solid fa-droplet"></i>
+                            <div>
+                                <span>Humidity</span>
+                                <strong id="summaryHumidity">--</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-item">
+                            <i class="fa-solid fa-cloud-rain"></i>
+                            <div>
+                                <span>Rainfall</span>
+                                <strong id="summaryRainfall">--</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-item">
+                            <i class="fa-solid fa-wind"></i>
+                            <div>
+                                <span>Wind Speed</span>
+                                <strong id="summaryWind">--</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-item">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <div>
+                                <span>Pressure</span>
+                                <strong id="summaryPressure">--</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="summary-item">
+                            <i class="fa-solid fa-cloud"></i>
+                            <div>
+                                <span>Cloud Cover</span>
+                                <strong id="summaryCloud">--</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= INSIGHTS ================= -->
+    <section class="insights-section" id="insights">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                <i class="fa-solid fa-lightbulb"></i>
+                Climate Insights
+            </span>
+
+            <h2>Understand Your Climate Data</h2>
+
+            <p>
+                Climate Intelligence transforms weather data
+                into meaningful environmental insights.
+            </p>
+
+        </div>
+
+
+        <div class="insight-cards">
+
+            <div class="insight-card">
+
+                <div class="insight-icon">
+                    <i class="fa-solid fa-temperature-half"></i>
+                </div>
+
+                <h3>Temperature</h3>
+
+                <p>
+                    Temperature conditions are analyzed as part
+                    of the climate risk prediction.
+                </p>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <div class="insight-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <h3>Humidity</h3>
+
+                <p>
+                    Humidity contributes to the overall climate
+                    conditions evaluated by the model.
+                </p>
+
+            </div>
+
+
+            <div class="insight-card">
+
+                <div class="insight-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3>Machine Learning</h3>
+
+                <p>
+                    The prediction is generated by the trained
+                    Climate Intelligence machine learning model.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="logo">
+                <i class="fa-solid fa-cloud-sun"></i>
+                Climate<span class="logo-highlight">Intelligence</span>
+            </div>
+
+            <p>
+                AI-powered climate analysis and prediction.
+            </p>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Climate Intelligence. MCA Project.
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
